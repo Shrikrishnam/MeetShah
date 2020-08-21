@@ -1,0 +1,40 @@
+<div>
+    <h1>Appoinments</h1>
+    <br>
+    <table class="table">
+      <thead class="bg-primary">
+        <tr>
+          <th class="h1" style="font-size:1em; margin: 0%; all:none">Sl NO</th>
+          <th class="h2" style="font-size:1em; margin: 0%; all:none">Name</th>
+          <th class="h3" style="font-size:1em; margin: 0%; all:none">Address</th>
+          <th class="h4" style="font-size:1em; margin: 0%; all:none">City</th>
+          <th class="h5" style="font-size:1em; margin: 0%; all:none">Package</th>
+          <th class="h6" style="font-size:1em; margin: 0%; all:none">Trainer Preference</th>
+          <th class="h7" style="font-size:1em; margin: 0%; all:none">Phone</th>
+          <td ><h4 style="font-size:1em; margin: 0%; all:none">Edit</h4></td>
+          <td> <h4 style="font-size:1em; margin: 0%; all:none">Delete</h4></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appoinment of appointments">
+          <td>{{ appoinment.id }}</td>
+          <td>{{ appoinment.firstname + appoinment.lastname }}</td>
+          <td>{{ appoinment.streetaddress + " " + appoinment.state }}</td>
+          <td>{{ appoinment.city }}</td>
+          <td>{{ appoinment.Package }}</td>
+          <td>{{ appoinment.trainerpreference }}</td>
+          <td>{{ appoinment.phonenumber }}</td>
+          <td>
+            <!--button type="button" [routerLink]="['/crud/update/', product.id]"-->
+            <button type="button">Update</button>
+          </td>
+          <td>
+            <button type="button" (click)="deleteAppoinment(appoinment.id)">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
